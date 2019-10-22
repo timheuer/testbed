@@ -1,7 +1,8 @@
 name: BCNotification
 
-on: issues
-  types: [opened, edited, labeled]
+on: 
+  issues:
+    types: [opened, edited, labeled]
 
 jobs:
   send_mail:
