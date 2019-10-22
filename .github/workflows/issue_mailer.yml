@@ -1,14 +1,10 @@
 name: BCNotification
-
 on: 
   issues:
     types: [opened, edited, labeled]
-
 jobs:
-  send_mail:
-     
+  sendGrid:
     runs-on: ubuntu-latest
-    
     steps:
       - name: SendGrid
         uses: peter-evans/sendgrid-action@v1.0.0
