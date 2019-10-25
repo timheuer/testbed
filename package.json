@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@actions/github": "file:toolkit/actions-github-0.0.0.tgz",
-    "@types/node": "^12.11.7"
+    "@types/node": "^12.11.7",
+    "moment": "^2.24.0",
+    "remarkable": "^2.0.0"
   }
 }
