@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@actions/github": "file:toolkit/actions-github-0.0.0.tgz",
+    "@types/node": "^12.11.7"
+  }
+}
