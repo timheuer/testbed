@@ -9,9 +9,10 @@ var md = new Remarkable();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 var context = github.context;
 var issue = context.payload.issue;
+console.log(issue);
 var posted_date = moment(issue.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a");
 var msgBody = "";
-msgBody = 'NOTICE: BREAKING CHANGE FOR ' + issue.repository;
+msgBody = 'NOTICE: BREAKING CHANGE FOR ' + issue;
 msgBody = msgBody + '\nANNOUNCEMENT URL: ' + issue.url;
 msgBody = msgBody + '\nPOSTED AT: ' + posted_date;
 msgBody = msgBody + '\n\n\nTITLE: ' + issue.title;
@@ -22,8 +23,8 @@ var msg = {
     to: 'timheuer@microsoft.com',
     from: '.NET Breaking Changes <timheuer@microsoft.com>',
     subject: 'GitHub Issue Notification for Issue' + issue.number,
-    text: msgBody + issueBodyPlain,
-    html: issueBodyHtml
+    text: issueBodyPlain,
+    html: 'Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>' + issueBodyPlain
 };
 sgMail
     .send(msg)
