@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: issue-notifier
-        uses: timheuer/issue-notifier@v1
+        uses: timheuer/issue-notifier@v1.0.1
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
         with:
