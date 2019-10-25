@@ -24,7 +24,7 @@ var msg = {
     from: '.NET Breaking Changes <timheuer@microsoft.com>',
     subject: 'GitHub Issue Notification for Issue' + issue.number,
     text: issueBodyPlain,
-    html: 'Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>' + issueBodyPlain
+    html: 'Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>' + issueBodyHtml
 };
 sgMail
     .send(msg)
