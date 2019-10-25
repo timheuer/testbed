@@ -18,13 +18,13 @@ msgBody = msgBody + '\nPOSTED AT: ' + posted_date;
 msgBody = msgBody + '\n\n\nTITLE: ' + issue.title;
 msgBody = msgBody + '\nDetails:\n\n';
 var issueBodyPlain = issue.body;
-var issueBodyHtml = md.render(msgBody) + md.render(issue.body);
+var issueBodyHtml = md.render('Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>') + md.render(msgBody) + md.render(issue.body);
 var msg = {
     to: 'timheuer@microsoft.com',
     from: '.NET Breaking Changes <timheuer@microsoft.com>',
     subject: 'GitHub Issue Notification for Issue' + issue.number,
     text: issueBodyPlain,
-    html: 'Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>' + issueBodyHtml
+    html: issueBodyHtml
 };
 sgMail
     .send(msg)
