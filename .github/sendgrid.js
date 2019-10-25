@@ -18,7 +18,7 @@ msgBody = msgBody + '\nPOSTED AT: ' + posted_date;
 msgBody = msgBody + '\n\n\nTITLE: ' + issue.title;
 msgBody = msgBody + '\nDetails:\n\n';
 var issueBodyPlain = issue.body;
-var issueBodyHtml = 'Posted at: ' + posted_date + '<br/>Annnouncement URL: ' + issue.url + '<br/><br/>' + md.render(issue.body);
+var issueBodyHtml = 'Posted at: ' + posted_date + '<br/>Annnouncement URL: <a href=' + issue.html_url + '>' + issue.html_url + '</a><br/><br/>' + md.render(issue.body);
 var msg = {
     to: 'timheuer@microsoft.com',
     from: '.NET Breaking Changes <timheuer@microsoft.com>',
