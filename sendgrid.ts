@@ -14,7 +14,7 @@ var isBC = false;
 
 // check to see if it is a bc
 var labels = issue.labels;
-labels.array.forEach(label => {
+labels.forEach(label => {
     if (label.name == 'breaking-change')
     {
         isBC = true;
