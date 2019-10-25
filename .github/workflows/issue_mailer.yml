@@ -8,7 +8,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: SendGrid
-        uses: peter-evans/sendgrid-action@v1.0.0
+      - name: issue-notifier
+        uses: timheuer/issue-notifier@v1
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        with:
+          toMailAddress: 'tim@timheuer.com'
+          fromMailAddress: 'no-reply@example.com'
+          subject: 'test from consumption repo'
+          labelsToMonitor: 'breaking-change,big-bug'
