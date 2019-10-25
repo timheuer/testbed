@@ -1,7 +1,7 @@
 name: BCNotification
 on: 
   issues:
-    types: [opened, edited, labeled]
+    types: [edited, labeled]
 jobs:
   sendGrid:
     runs-on: ubuntu-latest

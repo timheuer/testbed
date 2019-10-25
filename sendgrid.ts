@@ -16,7 +16,7 @@ msgBody = msgBody + '\n\n\n' + issue.created_at;
 
 const msg = {
     to: 'timheuer@microsoft.com',
-    from: 'timheuer@microsoft.com',
+    from: '.NET Breaking Changes <timheuer@microsoft.com>',
     subject: 'GitHub Issue Notification for Issue' + issue.number,
     text: msgBody
 };
