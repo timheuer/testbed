@@ -7,7 +7,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 var context = github.context;
 var issue = context.payload.issue;
 var msgBody = "";
-msgBody = 'NOTICE: BREAKING CHANGE FOR ' + issue.repository.full_name;
+msgBody = 'NOTICE: BREAKING CHANGE FOR ' + issue.repository;
 msgBody = msgBody + '\nANNOUNCEMENT URL: ' + issue.url;
 msgBody = msgBody + '\n\n\nTITLE: ' + issue.title;
 msgBody = msgBody + '\nDetails:';
