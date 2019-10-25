@@ -13,7 +13,7 @@ console.log(issue);
 var posted_date = moment(issue.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a");
 var msgBody = "";
 msgBody = 'NOTICE: BREAKING CHANGE FOR ' + issue;
-msgBody = msgBody + '\nANNOUNCEMENT URL: ' + issue.url;
+msgBody = msgBody + '\nANNOUNCEMENT URL: ' + issue.html_url;
 msgBody = msgBody + '\nPOSTED AT: ' + posted_date;
 msgBody = msgBody + '\n\n\nTITLE: ' + issue.title;
 msgBody = msgBody + '\nDetails:\n\n';
