@@ -4,7 +4,8 @@ exports.__esModule = true;
 var github = require("@actions/github");
 var sgMail = require('@sendgrid/mail');
 var moment = require('moment');
-var md = require('remarkable');
+var Remarkable = require('remarkable').Remarkable;
+var md = new Remarkable();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 var context = github.context;
 var issue = context.payload.issue;
@@ -20,7 +21,7 @@ var issueBodyHtml = md.render(msgBody) + md.render(issue.body);
 var msg = {
     to: 'timheuer@microsoft.com',
     from: '.NET Breaking Changes <timheuer@microsoft.com>',
-    subject: 'BC Notification: ' + issue.number,
+    subject: 'GitHub Issue Notification for Issue' + issue.number,
     text: msgBody + issueBodyPlain,
     html: issueBodyHtml
 };

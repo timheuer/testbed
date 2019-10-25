@@ -3,7 +3,8 @@ import github = require('@actions/github');
 
 const sgMail = require('@sendgrid/mail');
 const moment = require('moment');
-const md = require('remarkable');
+const { Remarkable } = require('remarkable');
+var md = new Remarkable();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const context = (github as any).context
 const issue = context.payload.issue
